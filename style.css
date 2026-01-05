@@ -1,0 +1,50 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+/* Container do produto */
+.produto {
+  max-width: 400px;
+  margin: auto;
+}
+
+/* Container principal do Swiper */
+.swiper {
+  width: 100%;
+  height: 400px;        /* 🔴 OBRIGATÓRIO */
+  overflow: hidden;
+}
+
+/* Wrapper (não mexa) */
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+/* Cada slide */
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Imagem dentro do slide */
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* ajusta sem distorcer */
+  display: block;
+}
+
+/* Paginação (bolinhas) */
+.swiper-pagination-bullet {
+  background: #000;
+  opacity: 0.4;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
