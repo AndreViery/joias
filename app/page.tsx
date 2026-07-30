@@ -8,20 +8,19 @@ type Product = {
   category: "Brincos" | "Anéis" | "Pulseiras" | "Colares";
   material: "Dourado" | "Prata";
   price: number;
-  shape: "earring" | "ring" | "bracelet" | "necklace";
-  tone: string;
+  image: string;
   isNew?: boolean;
 };
 
 const products: Product[] = [
-  { id: 1, name: "Argola Aura", category: "Brincos", material: "Dourado", price: 89, shape: "earring", tone: "champagne", isNew: true },
-  { id: 2, name: "Anel Horizonte", category: "Anéis", material: "Dourado", price: 119, shape: "ring", tone: "sand" },
-  { id: 3, name: "Colar Ponto de Luz", category: "Colares", material: "Prata", price: 139, shape: "necklace", tone: "pearl", isNew: true },
-  { id: 4, name: "Pulseira Elo Sereno", category: "Pulseiras", material: "Dourado", price: 109, shape: "bracelet", tone: "linen" },
-  { id: 5, name: "Brinco Gota Solar", category: "Brincos", material: "Dourado", price: 98, shape: "earring", tone: "terracotta" },
-  { id: 6, name: "Anel Essência", category: "Anéis", material: "Prata", price: 95, shape: "ring", tone: "mist" },
-  { id: 7, name: "Colar Trevo", category: "Colares", material: "Dourado", price: 169, shape: "necklace", tone: "olive" },
-  { id: 8, name: "Pulseira Riviera", category: "Pulseiras", material: "Prata", price: 129, shape: "bracelet", tone: "stone" },
+  { id: 1, name: "Argola Zircônia Verde", category: "Brincos", material: "Dourado", price: 45, image: "/products/argola-zirconia-verde.webp", isNew: true },
+  { id: 2, name: "Brinco Concha", category: "Brincos", material: "Dourado", price: 30, image: "/products/brinco-concha.webp" },
+  { id: 3, name: "Anel Elegante — Tam. 16", category: "Anéis", material: "Dourado", price: 125, image: "/products/anel-elegante.webp", isNew: true },
+  { id: 4, name: "Anel Duplo — Tam. 20", category: "Anéis", material: "Dourado", price: 95, image: "/products/anel-duplo.webp" },
+  { id: 5, name: "Pulseira Bolinhas", category: "Pulseiras", material: "Dourado", price: 55, image: "/products/pulseira-bolinhas.webp" },
+  { id: 6, name: "Pulseira Libélula", category: "Pulseiras", material: "Dourado", price: 68, image: "/products/pulseira-libelula.webp" },
+  { id: 7, name: "Colar com Zircônias", category: "Colares", material: "Dourado", price: 145, image: "/products/colar-zirconias.webp" },
+  { id: 8, name: "Colar Bolinhas", category: "Colares", material: "Dourado", price: 70, image: "/products/colar-bolinhas.webp" },
 ];
 
 const money = (value: number) =>
@@ -29,10 +28,8 @@ const money = (value: number) =>
 
 function JewelryArt({ product, large = false }: { product: Product; large?: boolean }) {
   return (
-    <div className={`jewelry-art ${product.tone} ${large ? "large" : ""}`} aria-label={`Representação de ${product.name}`}>
-      <span className={`jewel ${product.shape}`} />
-      <span className="spark spark-one">✦</span>
-      <span className="spark spark-two">·</span>
+    <div className={`jewelry-art ${large ? "large" : ""}`}>
+      <img src={product.image} alt={product.name} />
     </div>
   );
 }
@@ -110,12 +107,16 @@ export default function Home() {
           <small>Banho em ouro 18k & prata 925</small>
         </div>
         <div className="hero-visual">
-          <div className="portrait">
-            <div className="portrait-halo" />
-            <div className="portrait-face" />
-            <div className="portrait-neck" />
-            <div className="portrait-earring">◯</div>
-            <div className="portrait-necklace">◇</div>
+          <div className="hero-monogram" aria-hidden="true">
+            <span className="monogram-n">N</span>
+            <span className="orbit orbit-one" />
+            <span className="orbit orbit-two" />
+            <span className="monogram-spark">✦</span>
+          </div>
+          <div className="hero-materials">
+            <span>OURO 18K</span>
+            <i />
+            <span>PRATA 925</span>
           </div>
           <div className="hero-note">
             <span>✦</span>

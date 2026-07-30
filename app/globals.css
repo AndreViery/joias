@@ -50,16 +50,17 @@ h1 em, h2 em { font-weight: 400; color: var(--gold-dark); }
 .primary span { margin-left: 28px; font-size: 16px; }
 .hero-copy .primary { margin-top: 18px; }
 .hero-copy small { display: block; margin-top: 25px; color: #746c64; font-size: 10px; letter-spacing: .12em; }
-.hero-visual { position: relative; min-height: 660px; background: linear-gradient(135deg, #d7c7b1 0%, #b49a7b 65%, #8e745b 100%); }
-.portrait { position: absolute; inset: 0; overflow: hidden; }
-.portrait-halo { position: absolute; width: 520px; height: 520px; border-radius: 50%; top: 42px; left: 50%; transform: translateX(-50%); background: rgba(244,230,207,.38); }
-.portrait-face { position: absolute; width: 265px; height: 360px; border-radius: 48% 48% 44% 44%; background: linear-gradient(155deg, #9b7158, #c28d70 62%, #8e624e); top: 95px; left: 50%; transform: translateX(-44%) rotate(-3deg); box-shadow: -55px -35px 0 10px #332a24, 45px -35px 0 12px #332a24; }
-.portrait-face::before { content: ""; position: absolute; inset: 150px 53px auto; width: 105px; height: 35px; border-bottom: 2px solid rgba(68,39,28,.65); border-radius: 50%; }
-.portrait-face::after { content: ""; position: absolute; left: 100px; top: 220px; width: 60px; height: 22px; border-bottom: 3px solid rgba(86,41,37,.65); border-radius: 50%; }
-.portrait-neck { position: absolute; width: 220px; height: 310px; background: linear-gradient(110deg,#9b6b53,#bd866a); top: 405px; left: 50%; transform: translateX(-34%); border-radius: 40% 40% 0 0; box-shadow: 190px 90px 0 100px rgba(58,52,43,.85), -160px 100px 0 100px rgba(58,52,43,.85); }
-.portrait-earring { position: absolute; top: 330px; left: calc(50% + 125px); color: #f4d49c; font-size: 70px; font-weight: 200; text-shadow: 0 2px 15px rgba(0,0,0,.2); }
-.portrait-necklace { position: absolute; top: 500px; left: calc(50% + 35px); color: #f4d49c; font-size: 28px; }
-.portrait-necklace::before { content: ""; position: absolute; width: 200px; height: 110px; border-bottom: 2px solid #f4d49c; border-radius: 50%; left: -87px; top: -85px; }
+.hero-visual { position: relative; min-height: 660px; background: linear-gradient(145deg, #cbb89e 0%, #a98c6b 64%, #80664d 100%); overflow:hidden; }
+.hero-visual::before { content:""; position:absolute; inset:28px; border:1px solid rgba(255,247,234,.38); }
+.hero-visual::after { content:"NUBIA’S"; position:absolute; left:32px; bottom:22px; color:rgba(255,248,236,.48); font:9px Arial,sans-serif; letter-spacing:.45em; }
+.hero-monogram { position:absolute; width:min(520px,75%); aspect-ratio:1; border-radius:50%; left:50%; top:47%; transform:translate(-50%,-50%); background:rgba(237,224,202,.24); display:grid; place-items:center; }
+.monogram-n { color:#f4e7d2; font:italic 330px/.8 Georgia,serif; letter-spacing:-.12em; text-shadow:0 18px 35px rgba(52,35,20,.16); transform:translateX(-10px); }
+.orbit { position:absolute; border:1px solid rgba(250,235,210,.7); border-radius:50%; transform:rotate(-22deg); }
+.orbit-one { width:116%; height:52%; }
+.orbit-two { width:76%; height:112%; transform:rotate(38deg); border-color:rgba(250,235,210,.38); }
+.monogram-spark { position:absolute; right:1%; top:19%; color:#f7dcaa; font-size:34px; }
+.hero-materials { position:absolute; left:50%; bottom:84px; transform:translateX(-50%); width:70%; display:flex; align-items:center; gap:15px; color:#f7eddf; font-size:8px; letter-spacing:.22em; white-space:nowrap; }
+.hero-materials i { height:1px; flex:1; background:rgba(255,245,230,.55); }
 .hero-note { position: absolute; right: 5vw; bottom: 45px; color: #f8f0e5; text-align: center; font-family: Georgia, serif; font-style: italic; }
 .hero-note span { font-size: 25px; }
 .hero-note p { font-size: 18px; line-height: 1.4; }
@@ -108,21 +109,9 @@ h1 em, h2 em { font-weight: 400; color: var(--gold-dark); }
 .product-image { width: 100%; aspect-ratio: .83; border: 0; padding: 0; position: relative; cursor: pointer; overflow: hidden; background: #e2d8ca; }
 .new-label { position: absolute; left: 12px; top: 12px; z-index: 2; background: var(--ink); color: white; padding: 6px 9px; font-size: 8px; letter-spacing: .14em; }
 .favorite { position: absolute; right: 14px; top: 10px; z-index: 2; font-size: 21px; }
-.jewelry-art { width: 100%; height: 100%; position: relative; display: block; overflow: hidden; background: linear-gradient(150deg,#dfd2c0,#c6b49d); }
-.jewelry-art::after { content:""; position:absolute; width:68%; height:68%; border-radius:50%; background:rgba(255,255,255,.22); left:16%; top:10%; }
-.jewelry-art.champagne { background:linear-gradient(145deg,#eadcc5,#c8ad86); }.jewelry-art.sand { background:linear-gradient(145deg,#d1c4af,#a89375); }
-.jewelry-art.pearl { background:linear-gradient(145deg,#e2e2de,#bcbebc); }.jewelry-art.linen { background:linear-gradient(145deg,#e7dfd1,#c2b9a9); }
-.jewelry-art.terracotta { background:linear-gradient(145deg,#d4b49c,#a7785c); }.jewelry-art.mist { background:linear-gradient(145deg,#e0e2e0,#abb0ad); }
-.jewelry-art.olive { background:linear-gradient(145deg,#c9c5ad,#8e8b67); }.jewelry-art.stone { background:linear-gradient(145deg,#ddd6ce,#aaa39e); }
-.jewel { position:absolute; z-index:1; left:50%; top:48%; transform:translate(-50%,-50%); filter:drop-shadow(0 12px 9px rgba(52,38,24,.22)); }
-.jewel.earring { width:42%; height:55%; border:8px solid #b98b46; border-radius:50%; }
-.jewel.earring::after { content:""; position:absolute; width:18%; aspect-ratio:1; border-radius:50%; background:#f1d6a6; top:-10%; left:40%; }
-.jewel.ring { width:53%; aspect-ratio:1; border:15px solid #c4a064; border-radius:50%; }
-.jewel.ring::after { content:"◇"; position:absolute; font-size:55px; color:#f0e7d8; top:-50px; left:25%; text-shadow:0 2px 3px #846a46; }
-.jewel.necklace { width:70%; height:52%; border-bottom:4px solid #c7a260; border-radius:50%; }
-.jewel.necklace::after { content:"✦"; position:absolute; font-size:34px; color:#c39a54; left:44%; bottom:-30px; }
-.jewel.bracelet { width:60%; height:35%; border:8px dotted #ba904f; border-radius:50%; transform:translate(-50%,-50%) rotate(-12deg); }
-.spark { position:absolute; z-index:3; color:rgba(255,255,255,.82); }.spark-one { top:23%; right:23%; font-size:24px; }.spark-two { left:20%; bottom:25%; font-size:40px; }
+.jewelry-art { width:100%; height:100%; position:relative; display:block; overflow:hidden; background:#ded7ca; }
+.jewelry-art img { width:100%; height:100%; display:block; object-fit:cover; transition:transform .45s ease; }
+.product-image:hover .jewelry-art img { transform:scale(1.035); }
 .product-info { padding: 15px 3px; }
 .product-info > p { margin:0 0 7px; color:#81766b; font-size:8px; letter-spacing:.13em; text-transform:uppercase; }
 .product-info > button { border:0; padding:0; background:transparent; font:17px Georgia,serif; cursor:pointer; }
@@ -167,6 +156,7 @@ footer > small { display:block; margin-top:22px; color:#8b837a; font-size:8px; l
 .overlay-bg { position:absolute; inset:0; background:rgba(27,23,19,.72); border:0; }
 .product-modal { position:relative; z-index:1; width:min(900px,100%); max-height:90vh; overflow:auto; background:var(--paper); display:grid; grid-template-columns:1fr 1fr; box-shadow:0 25px 80px rgba(0,0,0,.3); }
 .product-modal .jewelry-art.large { min-height:550px; }
+.product-modal .jewelry-art.large img { object-fit:cover; }
 .close { position:absolute; z-index:3; right:15px; top:10px; border:0; background:transparent; font:30px Georgia,serif; cursor:pointer; }
 .modal-copy { padding:65px 55px; }
 .modal-copy h2 { font-size:45px; margin:0 0 18px; line-height:1; }
@@ -224,11 +214,8 @@ footer > small { display:block; margin-top:22px; color:#8b837a; font-size:8px; l
   .hero-copy { padding:55px 22px; }
   h1 { font-size:57px; }
   .hero-visual { min-height:470px; }
-  .portrait-halo { width:390px; height:390px; }
-  .portrait-face { width:205px; height:300px; top:75px; }
-  .portrait-neck { top:340px; width:180px; }
-  .portrait-earring { left:calc(50% + 88px); top:270px; font-size:55px; }
-  .portrait-necklace { top:420px; }
+  .hero-monogram { width:86%; }
+  .monogram-n { font-size:250px; }
   .trust-strip { padding:20px 8px; }
   .trust-strip > div { flex-direction:column; gap:5px; text-align:center; padding:5px; }
   .trust-strip b { font-size:19px; }.trust-strip strong { font-size:11px; }.trust-strip small { display:none; }
