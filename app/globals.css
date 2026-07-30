@@ -1,0 +1,256 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #29221d;
+  --paper: #f8f5ef;
+  --cream: #eee7da;
+  --gold: #a9824f;
+  --gold-dark: #71552f;
+  --sage: #78806c;
+  --line: rgba(41, 34, 29, .14);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
+button, input, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { color: inherit; }
+a { color: inherit; text-decoration: none; }
+
+.announcement {
+  height: 34px; display: flex; align-items: center; justify-content: center; gap: 20px;
+  background: var(--ink); color: #f7f1e8; font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+}
+.site-header {
+  height: 82px; display: grid; grid-template-columns: 220px 1fr 220px; align-items: center;
+  padding: 0 4vw; border-bottom: 1px solid var(--line); position: relative; z-index: 20; background: var(--paper);
+}
+.brand { font-family: Georgia, serif; letter-spacing: .12em; font-size: 20px; font-weight: 700; white-space: nowrap; }
+.brand i { display: block; font-size: 8px; text-align: center; letter-spacing: .5em; font-family: Arial, sans-serif; font-style: normal; margin-top: 3px; color: var(--gold-dark); }
+.site-header nav { display: flex; align-items: center; justify-content: center; gap: clamp(15px, 2.3vw, 34px); }
+.site-header nav button, .site-header nav a, .header-actions button, .menu-button {
+  border: 0; background: transparent; cursor: pointer; font-size: 11px; text-transform: uppercase; letter-spacing: .12em;
+}
+.site-header nav button:hover, .site-header nav a:hover { color: var(--gold-dark); }
+.header-actions { display: flex; gap: 17px; align-items: center; justify-content: flex-end; }
+.header-actions button { font-size: 21px; padding: 5px; position: relative; }
+.bag-button b { position: absolute; right: -3px; top: 0; background: var(--gold-dark); color: white; border-radius: 50%; width: 16px; height: 16px; display: grid; place-items: center; font-size: 9px; }
+.menu-button { display: none; }
+
+.hero { min-height: 660px; display: grid; grid-template-columns: 45% 55%; background: #ece5d9; overflow: hidden; }
+.hero-copy { padding: 90px 5vw 60px 8vw; position: relative; z-index: 2; }
+.eyebrow { font-size: 10px; letter-spacing: .25em; color: var(--gold-dark); font-weight: 700; margin: 0 0 20px; text-transform: uppercase; }
+h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+h1 { font-size: clamp(58px, 6.2vw, 94px); line-height: .9; letter-spacing: -.045em; margin: 0 0 30px; }
+h1 em, h2 em { font-weight: 400; color: var(--gold-dark); }
+.hero-copy > p:not(.eyebrow) { max-width: 460px; color: #5d554d; line-height: 1.7; font-family: Georgia, serif; font-size: 16px; }
+.primary { background: var(--ink); color: white; border: 0; padding: 18px 25px; letter-spacing: .16em; font-size: 10px; cursor: pointer; transition: .25s; }
+.primary:hover { background: var(--gold-dark); transform: translateY(-2px); }
+.primary span { margin-left: 28px; font-size: 16px; }
+.hero-copy .primary { margin-top: 18px; }
+.hero-copy small { display: block; margin-top: 25px; color: #746c64; font-size: 10px; letter-spacing: .12em; }
+.hero-visual { position: relative; min-height: 660px; background: linear-gradient(135deg, #d7c7b1 0%, #b49a7b 65%, #8e745b 100%); }
+.portrait { position: absolute; inset: 0; overflow: hidden; }
+.portrait-halo { position: absolute; width: 520px; height: 520px; border-radius: 50%; top: 42px; left: 50%; transform: translateX(-50%); background: rgba(244,230,207,.38); }
+.portrait-face { position: absolute; width: 265px; height: 360px; border-radius: 48% 48% 44% 44%; background: linear-gradient(155deg, #9b7158, #c28d70 62%, #8e624e); top: 95px; left: 50%; transform: translateX(-44%) rotate(-3deg); box-shadow: -55px -35px 0 10px #332a24, 45px -35px 0 12px #332a24; }
+.portrait-face::before { content: ""; position: absolute; inset: 150px 53px auto; width: 105px; height: 35px; border-bottom: 2px solid rgba(68,39,28,.65); border-radius: 50%; }
+.portrait-face::after { content: ""; position: absolute; left: 100px; top: 220px; width: 60px; height: 22px; border-bottom: 3px solid rgba(86,41,37,.65); border-radius: 50%; }
+.portrait-neck { position: absolute; width: 220px; height: 310px; background: linear-gradient(110deg,#9b6b53,#bd866a); top: 405px; left: 50%; transform: translateX(-34%); border-radius: 40% 40% 0 0; box-shadow: 190px 90px 0 100px rgba(58,52,43,.85), -160px 100px 0 100px rgba(58,52,43,.85); }
+.portrait-earring { position: absolute; top: 330px; left: calc(50% + 125px); color: #f4d49c; font-size: 70px; font-weight: 200; text-shadow: 0 2px 15px rgba(0,0,0,.2); }
+.portrait-necklace { position: absolute; top: 500px; left: calc(50% + 35px); color: #f4d49c; font-size: 28px; }
+.portrait-necklace::before { content: ""; position: absolute; width: 200px; height: 110px; border-bottom: 2px solid #f4d49c; border-radius: 50%; left: -87px; top: -85px; }
+.hero-note { position: absolute; right: 5vw; bottom: 45px; color: #f8f0e5; text-align: center; font-family: Georgia, serif; font-style: italic; }
+.hero-note span { font-size: 25px; }
+.hero-note p { font-size: 18px; line-height: 1.4; }
+
+.trust-strip { display: grid; grid-template-columns: repeat(4,1fr); padding: 24px 6vw; border-bottom: 1px solid var(--line); background: #f7f3ec; }
+.trust-strip > div { display: flex; align-items: center; justify-content: center; gap: 14px; border-right: 1px solid var(--line); min-height: 44px; }
+.trust-strip > div:last-child { border: 0; }
+.trust-strip b { font-size: 23px; color: var(--gold-dark); font-weight: 400; }
+.trust-strip strong, .trust-strip small { display: block; }
+.trust-strip strong { font-family: Georgia, serif; font-size: 13px; margin-bottom: 4px; }
+.trust-strip small { color: #766f67; font-size: 9px; }
+
+.categories, .catalog { padding: 100px 6vw; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 42px; }
+.section-heading h2 { font-size: clamp(38px,4vw,58px); margin: 0; line-height: 1; letter-spacing: -.03em; }
+.section-heading button { border: 0; background: transparent; padding: 8px; font-size: 10px; letter-spacing: .16em; border-bottom: 1px solid var(--ink); cursor: pointer; }
+.section-heading button span { margin-left: 20px; }
+.category-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 15px; }
+.category-card { height: 390px; border: 0; position: relative; overflow: hidden; text-align: left; padding: 27px; cursor: pointer; color: var(--ink); transition: transform .3s; }
+.category-card:hover { transform: translateY(-6px); }
+.cat-01 { background: #d8c2a8; }.cat-02 { background: #c6c8be; }.cat-03 { background: #b89b82; }.cat-04 { background: #d8d0c4; }
+.category-card small { position: absolute; top: 20px; right: 22px; font-family: Georgia,serif; font-size: 12px; }
+.category-card strong { position: absolute; left: 25px; bottom: 45px; font: 400 28px Georgia,serif; }
+.category-card i { position: absolute; left: 26px; bottom: 22px; font-size: 9px; letter-spacing: .14em; font-style: normal; text-transform: uppercase; opacity: 0; transform: translateY(8px); transition: .3s; }
+.category-card:hover i { opacity: 1; transform: none; }
+.category-jewel { position: absolute; left: 50%; top: 48%; transform: translate(-50%,-50%); filter: drop-shadow(0 15px 12px rgba(55,36,20,.2)); }
+.category-jewel.earring { width: 115px; height: 170px; border: 13px solid #b98839; border-radius: 50%; }
+.category-jewel.earring::after { content: ""; position:absolute; width:16px; height:16px; background:#f1d59f; border-radius:50%; top:-25px; left:36px; box-shadow: 18px 2px 0 #f1d59f; }
+.category-jewel.ring { width: 155px; height: 155px; border: 20px solid #d9d5cc; border-radius: 50%; box-shadow: inset 0 0 0 4px #989a96; }
+.category-jewel.ring::after { content:"◇"; position:absolute; font-size:75px; top:-82px; left:30px; color:#efeee8; }
+.category-jewel.necklace { width: 210px; height: 180px; border-bottom: 5px solid #c0934c; border-radius: 50%; }
+.category-jewel.necklace::after { content:"✦"; position:absolute; font-size:45px; color:#d1a257; left:83px; bottom:-45px; }
+.category-jewel.bracelet { width: 190px; height: 110px; border: 12px dotted #b28c54; border-radius: 50%; transform: translate(-50%,-50%) rotate(-13deg); }
+
+.catalog { background: #efe9df; }
+.catalog-intro { max-width: 310px; color: #6c655d; font: 15px/1.6 Georgia,serif; }
+.filters { display: grid; grid-template-columns: minmax(220px,1fr) auto 150px; align-items: center; gap: 25px; border-top: 1px solid var(--line); padding: 20px 0 35px; }
+.search { display: flex; gap: 8px; border-bottom: 1px solid var(--line); padding: 10px 0; max-width: 280px; }
+.search input { width: 100%; border: 0; outline: 0; background: transparent; font-size: 12px; }
+.filter-row { display: flex; gap: 5px; }
+.filter-row button { border: 1px solid transparent; background: transparent; padding: 9px 13px; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
+.filter-row button.active { border-color: var(--ink); }
+.filters select { background: transparent; border: 0; border-bottom: 1px solid var(--line); padding: 9px; font-size: 10px; text-transform: uppercase; }
+.product-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 32px 16px; }
+.product-card { min-width: 0; }
+.product-image { width: 100%; aspect-ratio: .83; border: 0; padding: 0; position: relative; cursor: pointer; overflow: hidden; background: #e2d8ca; }
+.new-label { position: absolute; left: 12px; top: 12px; z-index: 2; background: var(--ink); color: white; padding: 6px 9px; font-size: 8px; letter-spacing: .14em; }
+.favorite { position: absolute; right: 14px; top: 10px; z-index: 2; font-size: 21px; }
+.jewelry-art { width: 100%; height: 100%; position: relative; display: block; overflow: hidden; background: linear-gradient(150deg,#dfd2c0,#c6b49d); }
+.jewelry-art::after { content:""; position:absolute; width:68%; height:68%; border-radius:50%; background:rgba(255,255,255,.22); left:16%; top:10%; }
+.jewelry-art.champagne { background:linear-gradient(145deg,#eadcc5,#c8ad86); }.jewelry-art.sand { background:linear-gradient(145deg,#d1c4af,#a89375); }
+.jewelry-art.pearl { background:linear-gradient(145deg,#e2e2de,#bcbebc); }.jewelry-art.linen { background:linear-gradient(145deg,#e7dfd1,#c2b9a9); }
+.jewelry-art.terracotta { background:linear-gradient(145deg,#d4b49c,#a7785c); }.jewelry-art.mist { background:linear-gradient(145deg,#e0e2e0,#abb0ad); }
+.jewelry-art.olive { background:linear-gradient(145deg,#c9c5ad,#8e8b67); }.jewelry-art.stone { background:linear-gradient(145deg,#ddd6ce,#aaa39e); }
+.jewel { position:absolute; z-index:1; left:50%; top:48%; transform:translate(-50%,-50%); filter:drop-shadow(0 12px 9px rgba(52,38,24,.22)); }
+.jewel.earring { width:42%; height:55%; border:8px solid #b98b46; border-radius:50%; }
+.jewel.earring::after { content:""; position:absolute; width:18%; aspect-ratio:1; border-radius:50%; background:#f1d6a6; top:-10%; left:40%; }
+.jewel.ring { width:53%; aspect-ratio:1; border:15px solid #c4a064; border-radius:50%; }
+.jewel.ring::after { content:"◇"; position:absolute; font-size:55px; color:#f0e7d8; top:-50px; left:25%; text-shadow:0 2px 3px #846a46; }
+.jewel.necklace { width:70%; height:52%; border-bottom:4px solid #c7a260; border-radius:50%; }
+.jewel.necklace::after { content:"✦"; position:absolute; font-size:34px; color:#c39a54; left:44%; bottom:-30px; }
+.jewel.bracelet { width:60%; height:35%; border:8px dotted #ba904f; border-radius:50%; transform:translate(-50%,-50%) rotate(-12deg); }
+.spark { position:absolute; z-index:3; color:rgba(255,255,255,.82); }.spark-one { top:23%; right:23%; font-size:24px; }.spark-two { left:20%; bottom:25%; font-size:40px; }
+.product-info { padding: 15px 3px; }
+.product-info > p { margin:0 0 7px; color:#81766b; font-size:8px; letter-spacing:.13em; text-transform:uppercase; }
+.product-info > button { border:0; padding:0; background:transparent; font:17px Georgia,serif; cursor:pointer; }
+.product-info > div { display:flex; align-items:center; justify-content:space-between; margin-top:12px; }
+.product-info strong { font:13px Georgia,serif; }
+.product-info > div button { border:1px solid var(--line); width:30px; height:30px; border-radius:50%; background:transparent; cursor:pointer; transition:.2s; }
+.product-info > div button:hover { background:var(--ink); color:white; }
+.empty-state { text-align:center; padding:80px; border:1px solid var(--line); }
+.empty-state span { font-size:40px; color:var(--gold); }.empty-state h3 { font:28px Georgia,serif; margin:12px 0; }.empty-state p { color:#716960; }
+
+.story { display:grid; grid-template-columns:1fr 1fr; min-height:620px; background:#dad5c8; }
+.story-art { position:relative; overflow:hidden; background:linear-gradient(135deg,#908a78,#b5aa92); }
+.story-ring { position:absolute; width:260px; height:260px; border:38px solid #b98e4e; border-radius:50%; left:50%; top:48%; transform:translate(-50%,-50%); box-shadow:0 30px 35px rgba(44,34,20,.25),inset 0 0 0 5px #ecd09c; }
+.story-ring::after { content:"◇"; position:absolute; font-size:130px; color:#eee2c7; top:-130px; left:35px; text-shadow:0 5px 8px #6d593d; }
+.story-art p { position:absolute; right:35px; bottom:30px; color:white; font:italic 17px/1.5 Georgia,serif; text-align:center; }
+.story-copy { padding:95px 9vw 75px 7vw; background:#f6f1e8; }
+.story-copy h2 { font-size:52px; line-height:1.05; margin:0 0 26px; }
+.story-copy > p:not(.eyebrow) { color:#665f57; line-height:1.8; font:15px Georgia,serif; max-width:520px; }
+.care-list { margin:35px 0; border-top:1px solid var(--line); }
+.care-list span { display:block; padding:16px 0; border-bottom:1px solid var(--line); font:14px Georgia,serif; }
+.care-list b { margin-right:22px; color:var(--gold-dark); font:10px Arial,sans-serif; }
+.story-copy > a { font-size:9px; letter-spacing:.16em; border-bottom:1px solid var(--ink); padding-bottom:8px; }
+.story-copy > a span { margin-left:25px; }
+
+.newsletter { padding:90px 20px; text-align:center; background:#292521; color:#f8f2e8; }
+.newsletter .eyebrow { color:#c9a56e; }
+.newsletter h2 { font-size:48px; line-height:1.05; margin:0 0 20px; }
+.newsletter h2 em { color:#c9a56e; }
+.newsletter > p:not(.eyebrow) { color:#bdb4a9; font:14px Georgia,serif; }
+.newsletter form { max-width:520px; margin:35px auto 0; display:flex; border-bottom:1px solid #766d64; }
+.newsletter input { border:0; outline:0; background:transparent; flex:1; padding:15px 0; color:white; font-size:12px; }
+.newsletter button { border:0; background:transparent; color:#d1b384; font-size:9px; letter-spacing:.13em; cursor:pointer; }
+footer { padding:55px 6vw 25px; text-align:center; background:#f2ede4; }
+footer > p { color:#766e65; font:13px Georgia,serif; margin:18px 0 30px; }
+.footer-links { display:flex; justify-content:center; gap:32px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:18px; }
+.footer-links a { font-size:9px; letter-spacing:.11em; text-transform:uppercase; }
+footer > small { display:block; margin-top:22px; color:#8b837a; font-size:8px; letter-spacing:.1em; }
+.whatsapp { position:fixed; z-index:30; right:22px; bottom:22px; background:#3d5e45; color:white; border-radius:28px; display:flex; gap:9px; align-items:center; padding:13px 17px; box-shadow:0 7px 24px rgba(0,0,0,.18); font-size:13px; }
+.whatsapp:first-letter { font-size:18px; }
+
+.overlay { position:fixed; inset:0; z-index:50; display:grid; place-items:center; padding:20px; }
+.overlay-bg { position:absolute; inset:0; background:rgba(27,23,19,.72); border:0; }
+.product-modal { position:relative; z-index:1; width:min(900px,100%); max-height:90vh; overflow:auto; background:var(--paper); display:grid; grid-template-columns:1fr 1fr; box-shadow:0 25px 80px rgba(0,0,0,.3); }
+.product-modal .jewelry-art.large { min-height:550px; }
+.close { position:absolute; z-index:3; right:15px; top:10px; border:0; background:transparent; font:30px Georgia,serif; cursor:pointer; }
+.modal-copy { padding:65px 55px; }
+.modal-copy h2 { font-size:45px; margin:0 0 18px; line-height:1; }
+.modal-copy > strong { font:20px Georgia,serif; }
+.modal-copy > p:not(.eyebrow) { font:14px/1.7 Georgia,serif; color:#6a625b; margin:28px 0; }
+.modal-copy ul { padding:0; list-style:none; margin:0 0 30px; border-top:1px solid var(--line); }
+.modal-copy li { padding:11px 0; border-bottom:1px solid var(--line); font-size:11px; }
+.full { width:100%; }
+.modal-copy > a { display:block; text-align:center; margin-top:18px; font-size:10px; text-decoration:underline; }
+
+.cart-drawer { position:fixed; inset:0; z-index:60; visibility:hidden; pointer-events:none; }
+.cart-drawer.open { visibility:visible; pointer-events:auto; }
+.drawer-bg { position:absolute; inset:0; width:100%; border:0; background:rgba(28,24,21,.58); opacity:0; transition:.3s; }
+.cart-drawer.open .drawer-bg { opacity:1; }
+.drawer-panel { position:absolute; right:0; top:0; height:100%; width:min(480px,100%); background:var(--paper); transform:translateX(100%); transition:.35s ease; display:flex; flex-direction:column; }
+.cart-drawer.open .drawer-panel { transform:none; }
+.drawer-header { display:flex; justify-content:space-between; padding:28px 28px 20px; border-bottom:1px solid var(--line); }
+.drawer-header .eyebrow { margin-bottom:8px; }.drawer-header h2 { margin:0; font-size:35px; }.drawer-header h2 span { font-size:17px; color:#877d73; }
+.drawer-header button { border:0; background:transparent; font:30px Georgia,serif; cursor:pointer; }
+.cart-content { overflow:auto; flex:1; padding:5px 28px; }
+.cart-item { display:grid; grid-template-columns:110px 1fr; gap:18px; padding:22px 0; border-bottom:1px solid var(--line); }
+.cart-item .jewelry-art { height:130px; }
+.cart-item small,.cart-item strong,.cart-item b { display:block; }
+.cart-item small { color:#81766b; font-size:8px; letter-spacing:.12em; text-transform:uppercase; margin:4px 0 8px; }
+.cart-item strong { font:17px Georgia,serif; }.cart-item b { font:13px Georgia,serif; margin-top:10px; }
+.quantity { border:1px solid var(--line); width:95px; display:flex; justify-content:space-between; align-items:center; margin-top:15px; }
+.quantity button { border:0; background:transparent; padding:6px 9px; cursor:pointer; }.quantity span { font-size:10px; }
+.empty-cart { text-align:center; padding:90px 20px; }.empty-cart span { font-size:46px; color:var(--gold); }.empty-cart h3 { font:29px Georgia,serif; margin:14px; }.empty-cart p { color:#756d65; font:14px Georgia,serif; }.empty-cart button { margin-top:18px; padding:14px 20px; background:transparent; border:1px solid var(--ink); font-size:9px; letter-spacing:.14em; cursor:pointer; }
+.cart-summary { padding:20px 28px; border-top:1px solid var(--line); box-shadow:0 -8px 25px rgba(0,0,0,.04); }
+.cart-summary > div { display:flex; justify-content:space-between; font:20px Georgia,serif; }.cart-summary > small { display:block; color:#7b736c; margin:8px 0 20px; font-size:9px; }.cart-summary > p { text-align:center; margin:13px 0 0; color:#706860; font-size:9px; }
+
+@media (max-width: 950px) {
+  .site-header { grid-template-columns:50px 1fr 120px; padding:0 15px; height:70px; }
+  .menu-button { display:block; font-size:20px; text-align:left; }
+  .site-header .brand { justify-self:center; }
+  .site-header nav { position:absolute; left:0; right:0; top:70px; display:none; flex-direction:column; align-items:stretch; padding:20px; background:var(--paper); border-bottom:1px solid var(--line); }
+  .site-header nav.open { display:flex; }
+  .site-header nav button,.site-header nav a { text-align:left; padding:8px; }
+  .header-actions button:first-child,.header-actions button:nth-child(2) { display:none; }
+  .hero { grid-template-columns:1fr; }
+  .hero-copy { padding:70px 8vw; }
+  .hero-visual { min-height:550px; }
+  .trust-strip { grid-template-columns:1fr 1fr; gap:18px 0; }
+  .trust-strip > div:nth-child(2) { border:0; }
+  .category-grid,.product-grid { grid-template-columns:1fr 1fr; }
+  .filters { grid-template-columns:1fr; }
+  .filter-row { overflow-x:auto; padding-bottom:5px; }
+  .story { grid-template-columns:1fr; }
+  .story-art { min-height:520px; }
+}
+@media (max-width: 600px) {
+  .announcement span:nth-child(2),.announcement span:nth-child(3) { display:none; }
+  .brand { font-size:16px; }
+  .hero { min-height:0; }
+  .hero-copy { padding:55px 22px; }
+  h1 { font-size:57px; }
+  .hero-visual { min-height:470px; }
+  .portrait-halo { width:390px; height:390px; }
+  .portrait-face { width:205px; height:300px; top:75px; }
+  .portrait-neck { top:340px; width:180px; }
+  .portrait-earring { left:calc(50% + 88px); top:270px; font-size:55px; }
+  .portrait-necklace { top:420px; }
+  .trust-strip { padding:20px 8px; }
+  .trust-strip > div { flex-direction:column; gap:5px; text-align:center; padding:5px; }
+  .trust-strip b { font-size:19px; }.trust-strip strong { font-size:11px; }.trust-strip small { display:none; }
+  .categories,.catalog { padding:70px 18px; }
+  .section-heading { align-items:start; }.section-heading > button,.catalog-intro { display:none; }
+  .section-heading h2 { font-size:40px; }
+  .category-grid { gap:8px; }
+  .category-card { height:245px; padding:15px; }.category-card strong { left:15px; bottom:18px; font-size:21px; }.category-card i { display:none; }
+  .category-jewel { scale:.65; }
+  .product-grid { gap:25px 9px; }
+  .product-info > button { font-size:14px; text-align:left; }
+  .filters { gap:12px; }
+  .filter-row button { padding:8px; }
+  .story-art { min-height:420px; }
+  .story-ring { width:200px; height:200px; }
+  .story-copy { padding:65px 24px; }.story-copy h2 { font-size:42px; }
+  .newsletter h2 { font-size:37px; }.newsletter form { flex-direction:column; border:0; gap:10px; }.newsletter input { border-bottom:1px solid #766d64; }.newsletter button { padding:15px; border:1px solid #766d64; }
+  .footer-links { flex-wrap:wrap; gap:18px; }
+  .whatsapp { padding:13px; border-radius:50%; }.whatsapp span { display:none; }
+  .product-modal { grid-template-columns:1fr; }.product-modal .jewelry-art.large { min-height:330px; }.modal-copy { padding:40px 25px; }.modal-copy h2 { font-size:38px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior:auto!important; transition:none!important; }
+}
