@@ -13,14 +13,14 @@ type Product = {
 };
 
 const products: Product[] = [
-  { id: 1, name: "Argola Zircônia Verde", category: "Brincos", material: "Dourado", price: 45, image: "/products/argola-zirconia-verde.webp", isNew: true },
-  { id: 2, name: "Brinco Concha", category: "Brincos", material: "Dourado", price: 30, image: "/products/brinco-concha.webp" },
-  { id: 3, name: "Anel Elegante — Tam. 16", category: "Anéis", material: "Dourado", price: 125, image: "/products/anel-elegante.webp", isNew: true },
-  { id: 4, name: "Anel Duplo — Tam. 20", category: "Anéis", material: "Dourado", price: 95, image: "/products/anel-duplo.webp" },
-  { id: 5, name: "Pulseira Bolinhas", category: "Pulseiras", material: "Dourado", price: 55, image: "/products/pulseira-bolinhas.webp" },
-  { id: 6, name: "Pulseira Libélula", category: "Pulseiras", material: "Dourado", price: 68, image: "/products/pulseira-libelula.webp" },
-  { id: 7, name: "Colar com Zircônias", category: "Colares", material: "Dourado", price: 145, image: "/products/colar-zirconias.webp" },
-  { id: 8, name: "Colar Bolinhas", category: "Colares", material: "Dourado", price: 70, image: "/products/colar-bolinhas.webp" },
+  { id: 1, name: "Argola Zircônia Verde", category: "Brincos", material: "Dourado", price: 45, image: "./products/argola-zirconia-verde.webp", isNew: true },
+  { id: 2, name: "Brinco Concha", category: "Brincos", material: "Dourado", price: 30, image: "./products/brinco-concha.webp" },
+  { id: 3, name: "Anel Elegante — Tam. 16", category: "Anéis", material: "Dourado", price: 125, image: "./products/anel-elegante.webp", isNew: true },
+  { id: 4, name: "Anel Duplo — Tam. 20", category: "Anéis", material: "Dourado", price: 95, image: "./products/anel-duplo.webp" },
+  { id: 5, name: "Pulseira Bolinhas", category: "Pulseiras", material: "Dourado", price: 55, image: "./products/pulseira-bolinhas.webp" },
+  { id: 6, name: "Pulseira Libélula", category: "Pulseiras", material: "Dourado", price: 68, image: "./products/pulseira-libelula.webp" },
+  { id: 7, name: "Colar com Zircônias", category: "Colares", material: "Dourado", price: 145, image: "./products/colar-zirconias.webp" },
+  { id: 8, name: "Colar Bolinhas", category: "Colares", material: "Dourado", price: 70, image: "./products/colar-bolinhas.webp" },
 ];
 
 const money = (value: number) =>
